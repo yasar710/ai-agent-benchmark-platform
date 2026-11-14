@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/agent_benchmark?useSSL=false&amp;allowPublicKeyRetrieval=true</property>
+        <property name="connection.username">root</property>
+
+        <!-- Apna asli MySQL password yahan likho -->
+        <property name="connection.password">Yash@123</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Console par SQL queries dekhne ke liye -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Ye setting tables ko automatically create karegi -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mapping Entity Classes -->
+        <mapping class="com.benchmark.model.Agent"/>
+        <mapping class="com.benchmark.model.Task"/>
+        <mapping class="com.benchmark.model.BenchmarkResult"/>
+    </session-factory>
+</hibernate-configuration>
